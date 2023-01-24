@@ -1,18 +1,46 @@
 '''
-© HALSmartia 2019
 
 Algorithm scrapes tweets from the past week
 to determine social sentiment factor for
 a particular search.
 
-@author: Andrea Vargas
 
 Dependencies: PANDAS, TWITTERAPI, OS
 
 @param: Brand Search Query, Number Tweets, Output Path
 -uses twitter premium features tu access full archive sandbox. must create an app and assign the Enviroment in developer.twitter.com
 
-@output: CSV file to specified path
+@output: CSV file to spe
+Pull requests
+Issues
+Codespaces
+Marketplace
+Explore
+@jcarvargtz
+jcarvargtz /
+twitter_marcas_master
+Public
+
+Cannot fork because you own this repository and are not a member of any organizations.
+
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+
+    Settings
+
+twitter_marcas_master/Scrape_functions/Twitter_Keys.txt
+@jcarvargtz
+jcarvargtz Add files via upload
+Latest commit 0ec9691 Jan 24, 2023
+History
+1 contributor
+16 lines cified path
 '''
 
 #import statements
