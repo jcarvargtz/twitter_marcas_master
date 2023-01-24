@@ -1,0 +1,7 @@
+{"noroeste" : ["Baja California", "Baja California Sur", "Chihuahua", "Sinaloa" ,"Sonora"],
+    "sureste" : [ "Campeche", "Chiapas", "Guerrero","Oaxaca", "Quintana Roo","Tabasco", "Veracruz", "Yucatán"],
+    "occidente" : ["Aguascalientes", "Colima", "Guanajuato", "Jalisco", "Michoacán", "Nayarit", "Querétaro", "Zacatecas"],
+    "noreste" : ["Coahuila", "Durango", "Nuevo León", "San Luis Potosí", "Tamaulipas"],
+    "centro" :["Tlaxcala", "Ciudad de México", "Estado de México", "Morelos", "Puebla", "Hidalgo"] }
+    
+    

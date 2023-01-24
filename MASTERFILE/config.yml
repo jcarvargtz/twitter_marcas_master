@@ -1,0 +1,177 @@
+---
+variables:
+    busqueda:
+        marca: BBVA
+        busqueda: BBVA
+        fechas:
+            inicio: 2019-10-07
+            fin: 2020-10-07
+        nuevo: True
+        output: BBVA.json
+        dir: 
+            base: RESULTADOS/BBVA
+            data: Data
+            resultados: Resultados
+
+    vars:
+        modelos: #paths para modelos
+        Groupings:
+            sexo:
+                - M
+                - F
+                - Todo
+            GrupoEdad:
+                - Todo
+                - Joven
+                - Adulto
+                - Mayor
+            Region:
+                - Todo
+                - Noreste
+                - Centro
+                - Noroeste
+                - Occidente
+                - SurEste
+        agg_locs:
+            estado: ["Aguascalientes", "Colima", "Guanajuato", "Jalisco",
+                    "Michoacán", "Nayarit", "Querétaro", "Zacatecas","Campeche", "Chiapas",
+                    "Guerrero","Oaxaca", "Quintana Roo","Tabasco", "Veracruz", "Yucatán",
+                    "Baja California", "Baja California Sur", "Chihuahua", "Sinaloa" ,"Sonora",
+                    "Coahuila", "Durango", "Nuevo León", "San Luis Potosí", "Tamaulipas",
+                    "Hidalgo","Ciudad de México","Puebla","Tlaxcala","Estado de México","Morelos"]
+            region:
+                noroeste: ["Baja California", "Baja California Sur", "Chihuahua", "Sinaloa" ,"Sonora"]
+                sureste: ["Campeche", "Chiapas", "Guerrero","Oaxaca", "Quintana Roo","Tabasco", "Veracruz", "Yucatán"]
+                occidente: ["Aguascalientes", "Colima", "Guanajuato", "Jalisco", "Michoacán", "Nayarit", "Querétaro", "Zacatecas"]
+                noreste: ["Coahuila", "Durango", "Nuevo León", "San Luis Potosí", "Tamaulipas"]
+                centro: ["Hidalgo","Ciudad de México","Puebla","Tlaxcala","Estado de México","Morelos"]
+
+            
+        dict_estado_codigo:
+            Coahuila: MX-COA
+            Durango: MX-DUR
+            Nuevo León: MX-NLE
+            San Luis Potosí: MX-SLP
+            Tamaulipas: MX-TAM
+            Aguascalientes: MX-AGU
+            Colima: MX-COL
+            Guanajuato: MX-GUA
+            Jalisco: MX-JAL
+            Michoacán: MX-MIC
+            Nayarit: MX-NAY
+            Querétaro: MX-QUE
+            Zacatecas: MX-ZAC
+            Campeche: MX-CAM
+            Chiapas: MX-CHP
+            Guerrero: MX-GRO
+            Oaxaca: MX-OAX
+            Quintana Roo: MX-ROO
+            Tabasco: MX-TAB
+            Veracruz: MX-VER
+            Yucatán: MX-YUC
+            Baja California: MX-BCN
+            Baja California Sur: MX-BCS
+            Chihuahua: MX-CHH
+            Sinaloa: MX-SIN
+            Sonora: MX-SON
+
+workflow:
+    get_data:
+        twitter: Genera_Base_Twitter
+        trends: genera_volumen_trends
+    proces_data:
+        twitter:
+            clean_data: __
+            predict_data: models?
+            fill_table: completa_twitter?
+        trends:
+            na
+        join_data:
+            na
+    generate_report:
+        mesas
+    
+
+mesas:
+    mesa1:
+        -g1:
+            -nombre: 
+            -tipo: mapa
+            -variables:
+                -estado
+                -volumen
+
+        -g2:
+            -nombre: alerta
+            -variables:
+                -popularidad:
+                    -alto
+                    -bajo
+                -sentimiento:
+                    -alto
+                    -bajo
+        -g3:
+            -nombre: word cloud
+            -tipo: word_cloud
+            -variables:
+                -palabras
+        -g4:
+            -nombre: sentimiento popularidad
+            -tipo:
+            -vairables:
+
+
+    mesa2:
+        grupos:
+            -sexo
+            -edad
+            -region
+        graficas:
+            g1:
+                nombre: indicadores promedio
+                tipo: numero
+                variables:
+                    -sentimiento
+                    -volumen
+            g2:
+                nombre: tendencia de clientes
+                tipo: barra
+                variables:
+            g3:
+                nombre: 
+                tipo: barra
+                variables:
+            g4:
+                nombre: 
+                tipo: mapa
+                variables:
+            g5:
+                nombre: 
+                tipo: serie de tiempo
+                variables:
+    mesa3:
+        grafica:
+            nombre: precio
+            tipo: serie_de_tiempo
+            valores:
+                -fecha
+                -precio
+                -sentimiento
+    mesa4:
+        graifca:
+            nombre:
+            tipo: mapa
+            valores:
+        tabla:
+            nombre:
+            valores:
+                -region
+                -sentimiento
+                -popularidad
+                -crecimiento
+                -compete
+                -indice
+
+
+...
+

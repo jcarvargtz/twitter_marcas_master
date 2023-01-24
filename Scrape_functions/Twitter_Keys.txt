@@ -1,0 +1,16 @@
+    #API Keys (jc)
+    consumer_key = '_'
+    consumer_secret = '_'
+    access_token_key = '_'
+    access_token_secret = '_'
+    PRODUCT='fullarchive'
+    LABEL='pruebasjc'
+
+
+    #API Keys (__)
+    consumer_key = '__'
+    consumer_secret = '__'
+    access_token_key = '__'
+    access_token_secret = '__'
+    PRODUCT='fullarchive'
+    LABEL='Pruebas'
